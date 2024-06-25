@@ -9,7 +9,14 @@ import SwiftUI
 
 struct ContentView: View {
     var body: some View {
-        PlatformArea()
+        ZStack {
+            GeometryReader { geometry in
+                BlockGrid().padding().position(x: geometry.size.width/2, y: geometry.size.width - 200.0)
+            }
+            GeometryReader { geometry in
+                PlatformArea().padding().position(x: geometry.size.width/2, y: geometry.size.width + 250.0)
+            }
+        }
     }
 }
 

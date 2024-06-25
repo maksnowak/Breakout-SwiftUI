@@ -13,6 +13,9 @@
 		E73D8ED42C2B01FE007ECE29 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E73D8ED32C2B01FE007ECE29 /* Preview Assets.xcassets */; };
 		E73D8EDB2C2B03F0007ECE29 /* Platform.swift in Sources */ = {isa = PBXBuildFile; fileRef = E73D8EDA2C2B03F0007ECE29 /* Platform.swift */; };
 		E73D8EDD2C2B05AB007ECE29 /* PlatformArea.swift in Sources */ = {isa = PBXBuildFile; fileRef = E73D8EDC2C2B05AB007ECE29 /* PlatformArea.swift */; };
+		E73D8EDF2C2B0A03007ECE29 /* Block.swift in Sources */ = {isa = PBXBuildFile; fileRef = E73D8EDE2C2B0A03007ECE29 /* Block.swift */; };
+		E73D8EE12C2B0C47007ECE29 /* BlockGrid.swift in Sources */ = {isa = PBXBuildFile; fileRef = E73D8EE02C2B0C47007ECE29 /* BlockGrid.swift */; };
+		E73D8EE32C2B0DE0007ECE29 /* BlockRow.swift in Sources */ = {isa = PBXBuildFile; fileRef = E73D8EE22C2B0DE0007ECE29 /* BlockRow.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -23,6 +26,9 @@
 		E73D8ED32C2B01FE007ECE29 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		E73D8EDA2C2B03F0007ECE29 /* Platform.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Platform.swift; sourceTree = "<group>"; };
 		E73D8EDC2C2B05AB007ECE29 /* PlatformArea.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlatformArea.swift; sourceTree = "<group>"; };
+		E73D8EDE2C2B0A03007ECE29 /* Block.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Block.swift; sourceTree = "<group>"; };
+		E73D8EE02C2B0C47007ECE29 /* BlockGrid.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BlockGrid.swift; sourceTree = "<group>"; };
+		E73D8EE22C2B0DE0007ECE29 /* BlockRow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BlockRow.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -61,6 +67,9 @@
 				E73D8ED22C2B01FE007ECE29 /* Preview Content */,
 				E73D8EDA2C2B03F0007ECE29 /* Platform.swift */,
 				E73D8EDC2C2B05AB007ECE29 /* PlatformArea.swift */,
+				E73D8EDE2C2B0A03007ECE29 /* Block.swift */,
+				E73D8EE02C2B0C47007ECE29 /* BlockGrid.swift */,
+				E73D8EE22C2B0DE0007ECE29 /* BlockRow.swift */,
 			);
 			path = Nowak_Arkanoid;
 			sourceTree = "<group>";
@@ -144,7 +153,10 @@
 			buildActionMask = 2147483647;
 			files = (
 				E73D8EDB2C2B03F0007ECE29 /* Platform.swift in Sources */,
+				E73D8EE32C2B0DE0007ECE29 /* BlockRow.swift in Sources */,
 				E73D8ECF2C2B01FB007ECE29 /* ContentView.swift in Sources */,
+				E73D8EDF2C2B0A03007ECE29 /* Block.swift in Sources */,
+				E73D8EE12C2B0C47007ECE29 /* BlockGrid.swift in Sources */,
 				E73D8ECD2C2B01FB007ECE29 /* Nowak_ArkanoidApp.swift in Sources */,
 				E73D8EDD2C2B05AB007ECE29 /* PlatformArea.swift in Sources */,
 			);
