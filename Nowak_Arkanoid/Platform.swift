@@ -9,7 +9,7 @@ import SwiftUI
 
 struct Platform: View {
     var body: some View {
-        Rectangle().frame(width: 80, height: 20)
+        Rectangle().frame(width: 90, height: 20)
     }
 }
 

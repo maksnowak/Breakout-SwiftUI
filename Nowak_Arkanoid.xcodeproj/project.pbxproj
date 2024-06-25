@@ -16,6 +16,7 @@
 		E73D8EDF2C2B0A03007ECE29 /* Block.swift in Sources */ = {isa = PBXBuildFile; fileRef = E73D8EDE2C2B0A03007ECE29 /* Block.swift */; };
 		E73D8EE12C2B0C47007ECE29 /* BlockGrid.swift in Sources */ = {isa = PBXBuildFile; fileRef = E73D8EE02C2B0C47007ECE29 /* BlockGrid.swift */; };
 		E73D8EE32C2B0DE0007ECE29 /* BlockRow.swift in Sources */ = {isa = PBXBuildFile; fileRef = E73D8EE22C2B0DE0007ECE29 /* BlockRow.swift */; };
+		E73D8EE52C2B159E007ECE29 /* CurrentScore.swift in Sources */ = {isa = PBXBuildFile; fileRef = E73D8EE42C2B159E007ECE29 /* CurrentScore.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -29,6 +30,7 @@
 		E73D8EDE2C2B0A03007ECE29 /* Block.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Block.swift; sourceTree = "<group>"; };
 		E73D8EE02C2B0C47007ECE29 /* BlockGrid.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BlockGrid.swift; sourceTree = "<group>"; };
 		E73D8EE22C2B0DE0007ECE29 /* BlockRow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BlockRow.swift; sourceTree = "<group>"; };
+		E73D8EE42C2B159E007ECE29 /* CurrentScore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CurrentScore.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -70,6 +72,7 @@
 				E73D8EDE2C2B0A03007ECE29 /* Block.swift */,
 				E73D8EE02C2B0C47007ECE29 /* BlockGrid.swift */,
 				E73D8EE22C2B0DE0007ECE29 /* BlockRow.swift */,
+				E73D8EE42C2B159E007ECE29 /* CurrentScore.swift */,
 			);
 			path = Nowak_Arkanoid;
 			sourceTree = "<group>";
@@ -156,6 +159,7 @@
 				E73D8EE32C2B0DE0007ECE29 /* BlockRow.swift in Sources */,
 				E73D8ECF2C2B01FB007ECE29 /* ContentView.swift in Sources */,
 				E73D8EDF2C2B0A03007ECE29 /* Block.swift in Sources */,
+				E73D8EE52C2B159E007ECE29 /* CurrentScore.swift in Sources */,
 				E73D8EE12C2B0C47007ECE29 /* BlockGrid.swift in Sources */,
 				E73D8ECD2C2B01FB007ECE29 /* Nowak_ArkanoidApp.swift in Sources */,
 				E73D8EDD2C2B05AB007ECE29 /* PlatformArea.swift in Sources */,

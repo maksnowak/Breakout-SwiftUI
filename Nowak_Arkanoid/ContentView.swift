@@ -11,10 +11,13 @@ struct ContentView: View {
     var body: some View {
         ZStack {
             GeometryReader { geometry in
-                BlockGrid().padding().position(x: geometry.size.width/2, y: geometry.size.width - 200.0)
+                CurrentScore().padding().position(x: geometry.size.width/2, y: 30.0)
             }
             GeometryReader { geometry in
-                PlatformArea().padding().position(x: geometry.size.width/2, y: geometry.size.width + 250.0)
+                BlockGrid().padding().position(x: geometry.size.width/2, y: 150.0)
+            }
+            GeometryReader { geometry in
+                PlatformArea().padding().position(x: geometry.size.width/2, y: geometry.size.height - 50.0)
             }
         }
     }
