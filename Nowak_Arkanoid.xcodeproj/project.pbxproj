@@ -11,6 +11,8 @@
 		E73D8ECF2C2B01FB007ECE29 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E73D8ECE2C2B01FB007ECE29 /* ContentView.swift */; };
 		E73D8ED12C2B01FE007ECE29 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E73D8ED02C2B01FE007ECE29 /* Assets.xcassets */; };
 		E73D8ED42C2B01FE007ECE29 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E73D8ED32C2B01FE007ECE29 /* Preview Assets.xcassets */; };
+		E73D8EDB2C2B03F0007ECE29 /* Platform.swift in Sources */ = {isa = PBXBuildFile; fileRef = E73D8EDA2C2B03F0007ECE29 /* Platform.swift */; };
+		E73D8EDD2C2B05AB007ECE29 /* PlatformArea.swift in Sources */ = {isa = PBXBuildFile; fileRef = E73D8EDC2C2B05AB007ECE29 /* PlatformArea.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -19,6 +21,8 @@
 		E73D8ECE2C2B01FB007ECE29 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		E73D8ED02C2B01FE007ECE29 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		E73D8ED32C2B01FE007ECE29 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
+		E73D8EDA2C2B03F0007ECE29 /* Platform.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Platform.swift; sourceTree = "<group>"; };
+		E73D8EDC2C2B05AB007ECE29 /* PlatformArea.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlatformArea.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -55,6 +59,8 @@
 				E73D8ECE2C2B01FB007ECE29 /* ContentView.swift */,
 				E73D8ED02C2B01FE007ECE29 /* Assets.xcassets */,
 				E73D8ED22C2B01FE007ECE29 /* Preview Content */,
+				E73D8EDA2C2B03F0007ECE29 /* Platform.swift */,
+				E73D8EDC2C2B05AB007ECE29 /* PlatformArea.swift */,
 			);
 			path = Nowak_Arkanoid;
 			sourceTree = "<group>";
@@ -137,8 +143,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E73D8EDB2C2B03F0007ECE29 /* Platform.swift in Sources */,
 				E73D8ECF2C2B01FB007ECE29 /* ContentView.swift in Sources */,
 				E73D8ECD2C2B01FB007ECE29 /* Nowak_ArkanoidApp.swift in Sources */,
+				E73D8EDD2C2B05AB007ECE29 /* PlatformArea.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
