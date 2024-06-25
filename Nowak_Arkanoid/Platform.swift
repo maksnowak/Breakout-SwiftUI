@@ -8,8 +8,10 @@
 import SwiftUI
 
 struct Platform: View {
+    let platformWidth = 90.0
+    let platformHeight = 20.0
     var body: some View {
-        Rectangle().frame(width: 90, height: 20)
+        Rectangle().frame(width: platformWidth, height: platformHeight)
     }
 }
 
