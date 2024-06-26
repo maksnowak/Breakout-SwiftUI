@@ -9,6 +9,7 @@ import Foundation
 import SwiftUI
 
 class BallPhysics: ObservableObject {
+    @ObservedObject var model: BlockModel
     @Published var offset_x = 0.0
     @Published var offset_y = 0.0
     var velocity = 5.0
@@ -17,6 +18,10 @@ class BallPhysics: ObservableObject {
     
     let screenWidth = UIScreen.main.bounds.width
     let screenHeight = UIScreen.main.bounds.height
+    
+    init(model: BlockModel) {
+        self.model = model
+    }
     
     func update() {
         if (x_direction_positive) {

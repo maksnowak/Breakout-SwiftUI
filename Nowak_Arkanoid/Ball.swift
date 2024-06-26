@@ -8,7 +8,14 @@
 import SwiftUI
 
 struct Ball: View {
-    @ObservedObject var physics = BallPhysics()
+    @ObservedObject var model: BlockModel
+    @ObservedObject var physics: BallPhysics
+    
+    init(model: BlockModel) {
+        self.model = model
+        self.physics = BallPhysics(model: model)
+    }
+    
     var body: some View {
         Circle().frame(width: 20, height: 20).offset(x: physics.offset_x, y: physics.offset_y)
     }
@@ -16,6 +23,6 @@ struct Ball: View {
 
 struct Ball_Previews: PreviewProvider {
     static var previews: some View {
-        Ball()
+        Ball(model: BlockModel(blocks: 6, rows: 7))
     }
 }

@@ -8,7 +8,13 @@
 import SwiftUI
 
 struct CurrentScore: View {
+    @ObservedObject var model: BlockModel
     @State var score = 0
+    
+    init(model: BlockModel) {
+        self.model = model
+    }
+    
     var body: some View {
         Text("\(score)").font(.system(size: 40).bold())
     }
@@ -16,6 +22,6 @@ struct CurrentScore: View {
 
 struct CurrentScore_Previews: PreviewProvider {
     static var previews: some View {
-        CurrentScore()
+        CurrentScore(model: BlockModel(blocks: 6, rows: 7))
     }
 }
