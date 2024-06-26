@@ -41,13 +41,16 @@ class BallPhysics: ObservableObject {
                 if (block.broken) {
                     continue
                 }
-                if (offset_x >= block.bounds.x_min && offset_x <= block.bounds.x_max && -offset_y >= block.bounds.y_min - screenHeight - 230.0 && -offset_y <= block.bounds.y_max - screenHeight - 230.0) {
+                let x_in = offset_x >= block.bounds.x_min && offset_x <= block.bounds.x_max
+                let y_in = -offset_y >= block.bounds.y_min + 430.0 && -offset_y <= block.bounds.y_max + 430.0
+                if (x_in && y_in) {
                     model.handleCollision(row: row_num, block: block_num)
+                    x_direction_positive = !x_direction_positive
+                    y_direction_positive = !y_direction_positive
                     break checkCollisions
                 }
             }
         }
-        
         if (offset_x <= -screenWidth/2 || offset_x >= screenWidth/2) {
             x_direction_positive = !x_direction_positive
         }

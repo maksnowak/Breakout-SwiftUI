@@ -20,7 +20,7 @@ struct BlockGrid: View {
             ForEach(0..<model.noRows) { row in
                 HStack(spacing: 5) {
                     ForEach(0..<model.noBlocks) { block in
-                        Block(color: colors[row])
+                        Block(color: colors[row], hidden: !model.grid[row][block].broken)
                     }
                 }
             }

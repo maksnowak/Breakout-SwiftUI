@@ -21,9 +21,9 @@ struct BlockBounds {
     }
 }
 
-struct BlockInfo {
-    var broken: Bool
-    var hitsLeft: Int
+class BlockInfo: ObservableObject {
+    @Published var broken: Bool
+    @Published var hitsLeft: Int
     var points: Int
     var bounds: BlockBounds
     init(broken: Bool, hitsLeft: Int, points: Int, bounds: BlockBounds) {
@@ -66,11 +66,17 @@ class BlockModel: ObservableObject {
     }
     
     func handleCollision(row: Int, block: Int) {
-        var handledBlock = grid[row][block]
+        let handledBlock = grid[row][block]
+        print("before")
+        print(handledBlock.hitsLeft)
+        print(handledBlock.broken)
         handledBlock.hitsLeft -= 1
         if handledBlock.hitsLeft == 0 {
             handledBlock.broken = true
             totalScore += handledBlock.points
         }
+        print("after")
+        print(handledBlock.hitsLeft)
+        print(handledBlock.broken)
     }
 }

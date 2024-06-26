@@ -9,9 +9,10 @@ import SwiftUI
 
 struct Block: View {
     var color: Color
-    @State var hidden: Bool = false
-    init(color: Color) {
+    @State var hidden: Bool
+    init(color: Color, hidden: Bool) {
         self.color = color
+        self.hidden = false
     }
     var body: some View {
         Rectangle().fill(color).frame(width: 60, height: 15).opacity(hidden ? 0.0 : 100.0)
@@ -20,6 +21,6 @@ struct Block: View {
 
 struct Block_Previews: PreviewProvider {
     static var previews: some View {
-        Block(color: .red)
+        Block(color: .red, hidden: false)
     }
 }
