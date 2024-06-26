@@ -9,12 +9,16 @@ import SwiftUI
 
 struct ContentView: View {
     var body: some View {
+        let ball = Ball()
+        let timer = Timer.publish(every: 0.1, on: .main, in: .common).autoconnect()
         ZStack {
             GeometryReader { geometry in
                 CurrentScore().padding().position(x: geometry.size.width/2, y: 30.0)
             }
             GeometryReader { geometry in
-                Ball().position(x: geometry.size.width/2, y: geometry.size.height - 70.0)
+                ball.position(x: geometry.size.width/2, y: geometry.size.height - 70.0).onReceive(timer) { _ in
+                    ball.physics.update()
+                }
             }
             GeometryReader { geometry in
                 BlockGrid().position(x: geometry.size.width/2, y: 150.0)

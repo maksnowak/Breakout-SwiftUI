@@ -8,10 +8,9 @@
 import SwiftUI
 
 struct Ball: View {
-    @State var offset_x = 0.0
-    @State var offset_y = 0.0
+    @ObservedObject var physics = BallPhysics()
     var body: some View {
-        Circle().frame(width: 20, height: 20).offset(x: offset_x, y:offset_y)
+        Circle().frame(width: 20, height: 20).offset(x: physics.offset_x, y: physics.offset_y)
     }
 }
 
