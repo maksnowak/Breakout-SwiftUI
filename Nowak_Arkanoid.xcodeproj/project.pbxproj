@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		E7152F182C2C368F0047CE09 /* Ball.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7152F172C2C368F0047CE09 /* Ball.swift */; };
 		E73D8ECD2C2B01FB007ECE29 /* Nowak_ArkanoidApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = E73D8ECC2C2B01FB007ECE29 /* Nowak_ArkanoidApp.swift */; };
 		E73D8ECF2C2B01FB007ECE29 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E73D8ECE2C2B01FB007ECE29 /* ContentView.swift */; };
 		E73D8ED12C2B01FE007ECE29 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E73D8ED02C2B01FE007ECE29 /* Assets.xcassets */; };
@@ -20,6 +21,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		E7152F172C2C368F0047CE09 /* Ball.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Ball.swift; sourceTree = "<group>"; };
 		E73D8EC92C2B01FB007ECE29 /* Nowak_Arkanoid.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Nowak_Arkanoid.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		E73D8ECC2C2B01FB007ECE29 /* Nowak_ArkanoidApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Nowak_ArkanoidApp.swift; sourceTree = "<group>"; };
 		E73D8ECE2C2B01FB007ECE29 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -73,6 +75,7 @@
 				E73D8EE02C2B0C47007ECE29 /* BlockGrid.swift */,
 				E73D8EE22C2B0DE0007ECE29 /* BlockRow.swift */,
 				E73D8EE42C2B159E007ECE29 /* CurrentScore.swift */,
+				E7152F172C2C368F0047CE09 /* Ball.swift */,
 			);
 			path = Nowak_Arkanoid;
 			sourceTree = "<group>";
@@ -161,6 +164,7 @@
 				E73D8EDF2C2B0A03007ECE29 /* Block.swift in Sources */,
 				E73D8EE52C2B159E007ECE29 /* CurrentScore.swift in Sources */,
 				E73D8EE12C2B0C47007ECE29 /* BlockGrid.swift in Sources */,
+				E7152F182C2C368F0047CE09 /* Ball.swift in Sources */,
 				E73D8ECD2C2B01FB007ECE29 /* Nowak_ArkanoidApp.swift in Sources */,
 				E73D8EDD2C2B05AB007ECE29 /* PlatformArea.swift in Sources */,
 			);

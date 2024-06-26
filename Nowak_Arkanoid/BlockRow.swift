@@ -8,7 +8,7 @@
 import SwiftUI
 
 struct BlockRow: View {
-    let noBlocks = 5
+    let noBlocks = 6
     var color: Color
     init (color: Color) {
         self.color = color

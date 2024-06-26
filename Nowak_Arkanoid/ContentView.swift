@@ -14,10 +14,13 @@ struct ContentView: View {
                 CurrentScore().padding().position(x: geometry.size.width/2, y: 30.0)
             }
             GeometryReader { geometry in
-                BlockGrid().padding().position(x: geometry.size.width/2, y: 150.0)
+                Ball().position(x: geometry.size.width/2, y: geometry.size.height - 70.0)
             }
             GeometryReader { geometry in
-                PlatformArea().padding().position(x: geometry.size.width/2, y: geometry.size.height - 50.0)
+                BlockGrid().position(x: geometry.size.width/2, y: 150.0)
+            }
+            GeometryReader { geometry in
+                PlatformArea().position(x: geometry.size.width/2, y: geometry.size.height - 50.0)
             }
         }
     }

@@ -8,8 +8,12 @@
 import SwiftUI
 
 struct Platform: View {
-    let platformWidth = 90.0
-    let platformHeight = 20.0
+    let platformWidth: CGFloat
+    let platformHeight: CGFloat
+    init (width: CGFloat, height: CGFloat) {
+        self.platformWidth = width
+        self.platformHeight = height
+    }
     var body: some View {
         Rectangle().frame(width: platformWidth, height: platformHeight)
     }
@@ -17,6 +21,6 @@ struct Platform: View {
 
 struct Platform_Previews: PreviewProvider {
     static var previews: some View {
-        Platform()
+        Platform(width: 90.0, height: 20.0)
     }
 }
