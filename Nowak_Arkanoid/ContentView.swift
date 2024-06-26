@@ -8,7 +8,7 @@
 import SwiftUI
 
 struct ContentView: View {
-    @ObservedObject var model = BlockModel(blocks: 6, rows: 7)
+    @ObservedObject var model = BlockModel(blocks: 6, rows: 7, blockWidth: 60.0, blockHeight: 15.0, blockSpacing: 5.0)
     var body: some View {
         let ball = Ball(model: model)
         let timer = Timer.publish(every: 0.1, on: .main, in: .common).autoconnect()

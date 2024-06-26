@@ -6,30 +6,60 @@
 //
 
 import Foundation
+import SwiftUI
+
+struct BlockBounds {
+    let x_min: CGFloat
+    let x_max: CGFloat
+    let y_min: CGFloat
+    let y_max: CGFloat
+    init (vertices: [CGFloat]) {
+        self.x_min = vertices[0]
+        self.x_max = vertices[1]
+        self.y_min = vertices[2]
+        self.y_max = vertices[3]
+    }
+}
 
 struct BlockInfo {
     var broken: Bool
     var hitsLeft: Int
     var points: Int
-    init(broken: Bool, hitsLeft: Int, points: Int) {
+    var bounds: BlockBounds
+    init(broken: Bool, hitsLeft: Int, points: Int, bounds: BlockBounds) {
         self.broken = broken
         self.hitsLeft = hitsLeft
         self.points = points
+        self.bounds = bounds
     }
 }
 
 class BlockModel: ObservableObject {
+    let screenWidth = UIScreen.main.bounds.width
+    let blockWidth: CGFloat
+    let blockHeight: CGFloat
+    let blockSpacing: CGFloat
     var noBlocks: Int
     var noRows: Int
     @Published var totalScore = 0;
     @Published var grid: [[BlockInfo]] = []
-    init (blocks: Int, rows: Int) {
+    init (blocks: Int, rows: Int, blockWidth: CGFloat, blockHeight: CGFloat, blockSpacing: CGFloat) {
         self.noRows = rows
-        self.noBlocks = rows
-        for _ in 0..<noRows {
+        self.noBlocks = blocks
+        self.blockWidth = blockWidth
+        self.blockHeight = blockHeight
+        self.blockSpacing = blockSpacing
+//        var totalHeight = self.noRows * self.blockWidth + self.blockSpacing * (self.noRows - 1)
+        for i in 0..<noRows {
             var row: [BlockInfo] = []
-            for _ in 0..<noBlocks {
-                row.append(BlockInfo(broken: false, hitsLeft: 1, points: 10))
+            for j in 0..<noBlocks {
+                let blockVertices = BlockBounds(vertices: [
+                    CGFloat(i) * (self.blockWidth + self.blockSpacing),
+                    CGFloat(i) * (self.blockWidth + self.blockSpacing) + self.blockWidth,
+                    CGFloat(j) * (self.blockHeight + self.blockSpacing),
+                    CGFloat(j) * (self.blockHeight + self.blockSpacing)
+                ])
+                row.append(BlockInfo(broken: false, hitsLeft: 1, points: 10, bounds: blockVertices))
             }
             self.grid.append(row)
         }

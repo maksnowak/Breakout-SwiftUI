@@ -9,8 +9,6 @@ import SwiftUI
 
 struct BlockGrid: View {
     @ObservedObject var model: BlockModel
-    let noRows = 7
-    let noBlocks = 6
     var colors = [Color.red, Color.orange, Color.yellow, Color.green, Color.blue, Color.indigo, Color.purple]
     
     init(model: BlockModel) {
@@ -18,10 +16,10 @@ struct BlockGrid: View {
     }
     
     var body: some View {
-        VStack {
-            ForEach(0..<noRows) { row in
-                HStack {
-                    ForEach(0..<noBlocks) { block in
+        VStack(spacing: 5) {
+            ForEach(0..<model.noRows) { row in
+                HStack(spacing: 5) {
+                    ForEach(0..<model.noBlocks) { block in
                         Block(color: colors[row])
                     }
                 }
@@ -32,6 +30,6 @@ struct BlockGrid: View {
 
 struct BlockGrid_Previews: PreviewProvider {
     static var previews: some View {
-        BlockGrid(model: BlockModel(blocks: 6, rows: 7))
+        BlockGrid(model: BlockModel(blocks: 6, rows: 7, blockWidth: 60.0, blockHeight: 15.0, blockSpacing: 5.0))
     }
 }
