@@ -13,7 +13,8 @@ class BallPhysics: ObservableObject {
     @ObservedObject var platformModel: PlatformModel
     @Published var offset_x = 0.0
     @Published var offset_y = 0.0
-    var velocity = 5.0
+    var velocity_x = 7.0
+    var velocity_y = 7.0
     var x_direction_positive = true
     var y_direction_positive = false
     
@@ -27,14 +28,14 @@ class BallPhysics: ObservableObject {
     
     func update() {
         if (x_direction_positive) {
-            offset_x += velocity
+            offset_x += velocity_x
         } else {
-            offset_x -= velocity
+            offset_x -= velocity_x
         }
         if (y_direction_positive) {
-            offset_y += velocity
+            offset_y += velocity_y
         } else {
-            offset_y -= velocity
+            offset_y -= velocity_y
         }
         
         print("Ball position: \(offset_x), \(offset_y)")
@@ -53,15 +54,19 @@ class BallPhysics: ObservableObject {
                     model.handleCollision(row: row_num, block: block_num)
                     x_direction_positive = !x_direction_positive
                     y_direction_positive = !y_direction_positive
+                    velocity_x = Double.random(in: (velocity_x)...(velocity_x+0.5))
+                    velocity_y = Double.random(in: (velocity_y)...(velocity_y+0.5))
                     break checkCollisions
                 }
             }
         }
         
         let x_in = offset_x >= platformModel.offset.width - platformModel.platformWidth/2 && offset_x <= platformModel.offset.width + platformModel.platformWidth/2
-        if (x_in && offset_y == CGFloat.zero) {
-            x_direction_positive = !x_direction_positive
+        if (x_in && offset_y >= CGFloat.zero && offset_y <= CGFloat.zero + platformModel.platofrmHeight) {
+            x_direction_positive = Bool.random()
             y_direction_positive = !y_direction_positive
+            velocity_x = Double.random(in: (velocity_x-0.2)...(velocity_x+0.2))
+            velocity_y = Double.random(in: (velocity_y-0.2)...(velocity_y+0.2))
         }
         
         if (offset_x <= -screenWidth/2 || offset_x >= screenWidth/2) {
