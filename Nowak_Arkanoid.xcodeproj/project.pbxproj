@@ -11,8 +11,11 @@
 		E7152F1A2C2C3A420047CE09 /* BallPhysics.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7152F192C2C3A420047CE09 /* BallPhysics.swift */; };
 		E7152F1C2C2C47A20047CE09 /* BlockModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7152F1B2C2C47A20047CE09 /* BlockModel.swift */; };
 		E72DAA0A2C2DA60E0057E6CC /* PlatformModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E72DAA092C2DA60E0057E6CC /* PlatformModel.swift */; };
+		E72DAA0C2C2DB71E0057E6CC /* GameState.swift in Sources */ = {isa = PBXBuildFile; fileRef = E72DAA0B2C2DB71E0057E6CC /* GameState.swift */; };
+		E72DAA0E2C2DB8420057E6CC /* EndGame.swift in Sources */ = {isa = PBXBuildFile; fileRef = E72DAA0D2C2DB8420057E6CC /* EndGame.swift */; };
+		E72DAA102C2DB9EA0057E6CC /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E72DAA0F2C2DB9EA0057E6CC /* ContentView.swift */; };
 		E73D8ECD2C2B01FB007ECE29 /* Nowak_ArkanoidApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = E73D8ECC2C2B01FB007ECE29 /* Nowak_ArkanoidApp.swift */; };
-		E73D8ECF2C2B01FB007ECE29 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E73D8ECE2C2B01FB007ECE29 /* ContentView.swift */; };
+		E73D8ECF2C2B01FB007ECE29 /* GameView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E73D8ECE2C2B01FB007ECE29 /* GameView.swift */; };
 		E73D8ED12C2B01FE007ECE29 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E73D8ED02C2B01FE007ECE29 /* Assets.xcassets */; };
 		E73D8ED42C2B01FE007ECE29 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E73D8ED32C2B01FE007ECE29 /* Preview Assets.xcassets */; };
 		E73D8EDB2C2B03F0007ECE29 /* Platform.swift in Sources */ = {isa = PBXBuildFile; fileRef = E73D8EDA2C2B03F0007ECE29 /* Platform.swift */; };
@@ -27,9 +30,12 @@
 		E7152F192C2C3A420047CE09 /* BallPhysics.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BallPhysics.swift; sourceTree = "<group>"; };
 		E7152F1B2C2C47A20047CE09 /* BlockModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BlockModel.swift; sourceTree = "<group>"; };
 		E72DAA092C2DA60E0057E6CC /* PlatformModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlatformModel.swift; sourceTree = "<group>"; };
+		E72DAA0B2C2DB71E0057E6CC /* GameState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameState.swift; sourceTree = "<group>"; };
+		E72DAA0D2C2DB8420057E6CC /* EndGame.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EndGame.swift; sourceTree = "<group>"; };
+		E72DAA0F2C2DB9EA0057E6CC /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		E73D8EC92C2B01FB007ECE29 /* Nowak_Arkanoid.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Nowak_Arkanoid.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		E73D8ECC2C2B01FB007ECE29 /* Nowak_ArkanoidApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Nowak_ArkanoidApp.swift; sourceTree = "<group>"; };
-		E73D8ECE2C2B01FB007ECE29 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
+		E73D8ECE2C2B01FB007ECE29 /* GameView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameView.swift; sourceTree = "<group>"; };
 		E73D8ED02C2B01FE007ECE29 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		E73D8ED32C2B01FE007ECE29 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		E73D8EDA2C2B03F0007ECE29 /* Platform.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Platform.swift; sourceTree = "<group>"; };
@@ -70,7 +76,7 @@
 			isa = PBXGroup;
 			children = (
 				E73D8ECC2C2B01FB007ECE29 /* Nowak_ArkanoidApp.swift */,
-				E73D8ECE2C2B01FB007ECE29 /* ContentView.swift */,
+				E73D8ECE2C2B01FB007ECE29 /* GameView.swift */,
 				E73D8ED02C2B01FE007ECE29 /* Assets.xcassets */,
 				E73D8ED22C2B01FE007ECE29 /* Preview Content */,
 				E73D8EDA2C2B03F0007ECE29 /* Platform.swift */,
@@ -82,6 +88,9 @@
 				E7152F192C2C3A420047CE09 /* BallPhysics.swift */,
 				E7152F1B2C2C47A20047CE09 /* BlockModel.swift */,
 				E72DAA092C2DA60E0057E6CC /* PlatformModel.swift */,
+				E72DAA0B2C2DB71E0057E6CC /* GameState.swift */,
+				E72DAA0D2C2DB8420057E6CC /* EndGame.swift */,
+				E72DAA0F2C2DB9EA0057E6CC /* ContentView.swift */,
 			);
 			path = Nowak_Arkanoid;
 			sourceTree = "<group>";
@@ -165,14 +174,17 @@
 			buildActionMask = 2147483647;
 			files = (
 				E7152F1A2C2C3A420047CE09 /* BallPhysics.swift in Sources */,
+				E72DAA0E2C2DB8420057E6CC /* EndGame.swift in Sources */,
+				E72DAA102C2DB9EA0057E6CC /* ContentView.swift in Sources */,
 				E73D8EDB2C2B03F0007ECE29 /* Platform.swift in Sources */,
 				E72DAA0A2C2DA60E0057E6CC /* PlatformModel.swift in Sources */,
-				E73D8ECF2C2B01FB007ECE29 /* ContentView.swift in Sources */,
+				E73D8ECF2C2B01FB007ECE29 /* GameView.swift in Sources */,
 				E73D8EDF2C2B0A03007ECE29 /* Block.swift in Sources */,
 				E7152F1C2C2C47A20047CE09 /* BlockModel.swift in Sources */,
 				E73D8EE52C2B159E007ECE29 /* CurrentScore.swift in Sources */,
 				E73D8EE12C2B0C47007ECE29 /* BlockGrid.swift in Sources */,
 				E7152F182C2C368F0047CE09 /* Ball.swift in Sources */,
+				E72DAA0C2C2DB71E0057E6CC /* GameState.swift in Sources */,
 				E73D8ECD2C2B01FB007ECE29 /* Nowak_ArkanoidApp.swift in Sources */,
 				E73D8EDD2C2B05AB007ECE29 /* PlatformArea.swift in Sources */,
 			);

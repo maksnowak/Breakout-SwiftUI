@@ -43,12 +43,15 @@ class BlockModel: ObservableObject {
     @Published var noRows: Int
     @Published var totalScore = 0;
     @Published var grid: [[BlockInfo]] = []
+    @Published var gameState: GameState = .playing
+    @Published var remainingBlocks: Int
     init (blocks: Int, rows: Int, blockWidth: CGFloat, blockHeight: CGFloat, blockSpacing: CGFloat) {
         self.noRows = rows
         self.noBlocks = blocks
         self.blockWidth = blockWidth
         self.blockHeight = blockHeight
         self.blockSpacing = blockSpacing
+        self.remainingBlocks = blocks*rows
         let totalHeight = CGFloat(self.noRows) * self.blockWidth + self.blockSpacing * CGFloat(self.noRows - 1)
         for i in 0..<noRows {
             var row: [BlockInfo] = []
@@ -71,9 +74,25 @@ class BlockModel: ObservableObject {
         if handledBlock.hitsLeft == 0 {
             handledBlock.broken = true
             totalScore += handledBlock.points
+            remainingBlocks -= 1
         }
         else {
             totalScore += handledBlock.points / handledBlock.hitsLeft
+        }
+        if remainingBlocks == 0 {
+            gameState = .gameOver
+        }
+    }
+    
+    func reset() {
+        gameState = .playing
+        totalScore = 0
+        remainingBlocks = noBlocks * noRows
+        for i in 0..<noRows {
+            for j in 0..<noBlocks {
+                grid[i][j].broken = false
+                grid[i][j].hitsLeft = noRows - i
+            }
         }
     }
 }

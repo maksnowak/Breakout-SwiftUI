@@ -13,7 +13,7 @@ struct Nowak_ArkanoidApp: App {
     @State private var platformModel = PlatformModel()
     var body: some Scene {
         WindowGroup {
-            ContentView(model: model, platformModel: platformModel, ball: Ball(model: model, platformModel: platformModel), grid: BlockGrid(model: model), platform: PlatformArea(platformModel: platformModel))
+            ContentView(model: model, platformModel: platformModel)
         }
     }
 }

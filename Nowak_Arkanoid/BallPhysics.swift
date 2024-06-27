@@ -50,8 +50,8 @@ class BallPhysics: ObservableObject {
                     model.handleCollision(row: row_num, block: block_num)
                     x_direction_positive = !x_direction_positive
                     y_direction_positive = !y_direction_positive
-                    velocity_x = Double.random(in: (velocity_x)...(velocity_x+0.5))
-                    velocity_y = Double.random(in: (velocity_y)...(velocity_y+0.5))
+                    velocity_x = Double.random(in: (velocity_x)...(velocity_x+1.5))
+                    velocity_y = Double.random(in: (velocity_y)...(velocity_y+1.5))
                     break checkCollisions
                 }
             }
@@ -61,8 +61,8 @@ class BallPhysics: ObservableObject {
         if (x_in_platform && offset_y >= CGFloat.zero && offset_y <= CGFloat.zero + platformModel.platofrmHeight) {
             x_direction_positive = Bool.random()
             y_direction_positive = !y_direction_positive
-            velocity_x = Double.random(in: (velocity_x-0.2)...(velocity_x+0.2))
-            velocity_y = Double.random(in: (velocity_y-0.2)...(velocity_y+0.2))
+            velocity_x = Double.random(in: (velocity_x-0.5)...(velocity_x+0.5))
+            velocity_y = Double.random(in: (velocity_y-0.5)...(velocity_y+0.5))
         }
         
         if (offset_x <= -screenWidth/2 || offset_x >= screenWidth/2) {
@@ -70,6 +70,9 @@ class BallPhysics: ObservableObject {
         }
         if (-offset_y > screenHeight - 230.0) {
             y_direction_positive = !y_direction_positive
+        }
+        if offset_y > CGFloat.zero + platformModel.platofrmHeight {
+            model.gameState = .gameOver
         }
     }
     
