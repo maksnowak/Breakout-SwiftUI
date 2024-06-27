@@ -11,14 +11,13 @@ struct ContentView: View {
     @ObservedObject var model: BlockModel
     @ObservedObject var platformModel: PlatformModel
     @State var ball: Ball
-    @State var score: CurrentScore
     @State var grid: BlockGrid
     @State var platform: PlatformArea
     let timer = Timer.publish(every: 0.1, on: .main, in: .common).autoconnect()
     var body: some View {
         ZStack {
             GeometryReader { geometry in
-                score.padding().position(x: geometry.size.width/2, y: 30.0)
+                CurrentScore(score: $model.totalScore).padding().position(x: geometry.size.width/2, y: 30.0)
             }
             GeometryReader { geometry in
                 ball.position(x: geometry.size.width/2, y: geometry.size.height - 70.0).onReceive(timer) { _ in
@@ -40,7 +39,7 @@ struct ContentViewPreviewContainer: View {
     @State private var platformModel = PlatformModel()
     
     var body: some View {
-        ContentView(model: model, platformModel: platformModel, ball: Ball(model: model, platformModel: platformModel), score: CurrentScore(score: $model.totalScore), grid: BlockGrid(model: model), platform: PlatformArea(platformModel: platformModel))
+        ContentView(model: model, platformModel: platformModel, ball: Ball(model: model, platformModel: platformModel), grid: BlockGrid(model: model), platform: PlatformArea(platformModel: platformModel))
     }
 }
 
