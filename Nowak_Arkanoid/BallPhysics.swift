@@ -38,19 +38,15 @@ class BallPhysics: ObservableObject {
             offset_y -= velocity_y
         }
         
-        print("Ball position: \(offset_x), \(offset_y)")
-        
         checkCollisions: for row_num in 0..<model.noRows {
             for block_num in 0..<model.noBlocks {
                 let block = model.grid[row_num][block_num]
                 if (block.broken) {
                     continue
                 }
-                let x_in = offset_x + screenWidth/2 >= block.bounds.x_min && offset_x + screenWidth/2 <= block.bounds.x_max
+                let x_in = offset_x + screenWidth/2 + 10 >= block.bounds.x_min && offset_x + screenWidth/2 - 10 <= block.bounds.x_max
                 let y_in = -offset_y - 115.0 >= block.bounds.y_min && -offset_y - 115.0 <= block.bounds.y_max
                 if (x_in && y_in) {
-                    print("Collision detected with block at row \(row_num), column \(block_num)")
-                    print("Block vertices: x - (\(block.bounds.x_min), \(block.bounds.x_max)); y - (\(block.bounds.y_min), \(block.bounds.y_max))")
                     model.handleCollision(row: row_num, block: block_num)
                     x_direction_positive = !x_direction_positive
                     y_direction_positive = !y_direction_positive
@@ -61,8 +57,8 @@ class BallPhysics: ObservableObject {
             }
         }
         
-        let x_in = offset_x >= platformModel.offset.width - platformModel.platformWidth/2 && offset_x <= platformModel.offset.width + platformModel.platformWidth/2
-        if (x_in && offset_y >= CGFloat.zero && offset_y <= CGFloat.zero + platformModel.platofrmHeight) {
+        let x_in_platform = offset_x >= platformModel.offset.width - platformModel.platformWidth/2 && offset_x <= platformModel.offset.width + platformModel.platformWidth/2
+        if (x_in_platform && offset_y >= CGFloat.zero && offset_y <= CGFloat.zero + platformModel.platofrmHeight) {
             x_direction_positive = Bool.random()
             y_direction_positive = !y_direction_positive
             velocity_x = Double.random(in: (velocity_x-0.2)...(velocity_x+0.2))

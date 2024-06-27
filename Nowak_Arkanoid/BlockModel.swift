@@ -50,7 +50,6 @@ class BlockModel: ObservableObject {
         self.blockHeight = blockHeight
         self.blockSpacing = blockSpacing
         let totalHeight = CGFloat(self.noRows) * self.blockWidth + self.blockSpacing * CGFloat(self.noRows - 1)
-        print(totalHeight)
         for i in 0..<noRows {
             var row: [BlockInfo] = []
             for j in 0..<noBlocks {
@@ -60,8 +59,7 @@ class BlockModel: ObservableObject {
                     totalHeight - (CGFloat(i) * (self.blockHeight + self.blockSpacing)),
                     totalHeight - (CGFloat(i) * (self.blockHeight + self.blockSpacing)) + self.blockHeight
                 ])
-                row.append(BlockInfo(broken: false, hitsLeft: 1, points: 10, bounds: blockVertices))
-                print(blockVertices)
+                row.append(BlockInfo(broken: false, hitsLeft: noRows-i, points: 10*(noRows-i), bounds: blockVertices))
             }
             self.grid.append(row)
         }
@@ -69,18 +67,13 @@ class BlockModel: ObservableObject {
     
     func handleCollision(row: Int, block: Int) {
         let handledBlock = grid[row][block]
-        print("before")
-        print(handledBlock.hitsLeft)
-        print(handledBlock.broken)
-        print(totalScore)
         handledBlock.hitsLeft -= 1
         if handledBlock.hitsLeft == 0 {
             handledBlock.broken = true
             totalScore += handledBlock.points
         }
-        print("after")
-        print(handledBlock.hitsLeft)
-        print(handledBlock.broken)
-        print(totalScore)
+        else {
+            totalScore += handledBlock.points / handledBlock.hitsLeft
+        }
     }
 }
