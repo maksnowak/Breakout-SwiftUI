@@ -2,7 +2,7 @@
 //  PlatformArea.swift
 //  Nowak_Arkanoid
 //
-//  Created by apios on 25/06/2024.
+//  Created by Maksymilian Nowak on 25/06/2024.
 //
 
 import SwiftUI
@@ -12,13 +12,11 @@ struct PlatformArea: View {
     init(platformModel: PlatformModel) {
         self.platformModel = platformModel
     }
-//    let screenWidth = UIScreen.main.bounds.width
-//    @State var offset = CGSize.zero
-//    @State var platformWidth = 90.0
-//    @State var platofrmHeight = 20.0
     var body: some View {
+        // platform is moved by dragging a finger across the screen
         Platform(width: platformModel.platformWidth, height: platformModel.platofrmHeight).offset(x: platformModel.offset.width, y: CGFloat.zero).gesture(DragGesture().onChanged { gesture in
             platformModel.offset = gesture.translation
+            // set the platform bounds to screen edges
             if (platformModel.offset.width > platformModel.screenWidth/2 - platformModel.platformWidth/2) {
                 platformModel.offset.width = platformModel.screenWidth/2 - platformModel.platformWidth/2
             }

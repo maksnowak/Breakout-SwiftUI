@@ -2,7 +2,7 @@
 //  Ball.swift
 //  Nowak_Arkanoid
 //
-//  Created by apios on 26/06/2024.
+//  Created by Maksymilian Nowak on 26/06/2024.
 //
 
 import SwiftUI

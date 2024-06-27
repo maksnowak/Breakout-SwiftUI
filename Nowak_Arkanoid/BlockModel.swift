@@ -2,7 +2,7 @@
 //  BlockModel.swift
 //  Nowak_Arkanoid
 //
-//  Created by apios on 26/06/2024.
+//  Created by Maksymilian Nowak on 26/06/2024.
 //
 
 import Foundation
@@ -52,24 +52,26 @@ class BlockModel: ObservableObject {
         self.blockHeight = blockHeight
         self.blockSpacing = blockSpacing
         self.remainingBlocks = blocks*rows
-        let totalHeight = CGFloat(self.noRows) * self.blockWidth + self.blockSpacing * CGFloat(self.noRows - 1)
+        let totalHeight = CGFloat(self.noRows) * self.blockWidth + self.blockSpacing * CGFloat(self.noRows - 1) // total height of the block grid
         for i in 0..<noRows {
             var row: [BlockInfo] = []
             for j in 0..<noBlocks {
+                // set block vertices for collision checks
                 let blockVertices = BlockBounds(vertices: [
-                    CGFloat(j) * (self.blockWidth + self.blockSpacing),
-                    CGFloat(j) * (self.blockWidth + self.blockSpacing) + self.blockWidth,
-                    totalHeight - (CGFloat(i) * (self.blockHeight + self.blockSpacing)),
-                    totalHeight - (CGFloat(i) * (self.blockHeight + self.blockSpacing)) + self.blockHeight
+                    CGFloat(j) * (self.blockWidth + self.blockSpacing), // x_min
+                    CGFloat(j) * (self.blockWidth + self.blockSpacing) + self.blockWidth, // x_max
+                    totalHeight - (CGFloat(i) * (self.blockHeight + self.blockSpacing)), // y_min
+                    totalHeight - (CGFloat(i) * (self.blockHeight + self.blockSpacing)) + self.blockHeight // y_max
                 ])
-                row.append(BlockInfo(broken: false, hitsLeft: noRows-i, points: 10*(noRows-i), bounds: blockVertices))
+                row.append(BlockInfo(broken: false, hitsLeft: noRows-i, points: 10*(noRows-i), bounds: blockVertices)) // add to the row array
             }
-            self.grid.append(row)
+            self.grid.append(row) // append row to the grid
         }
     }
     
     func handleCollision(row: Int, block: Int) {
         let handledBlock = grid[row][block]
+        // decrease hits necessary to break the block
         handledBlock.hitsLeft -= 1
         if handledBlock.hitsLeft == 0 {
             handledBlock.broken = true
@@ -77,14 +79,17 @@ class BlockModel: ObservableObject {
             remainingBlocks -= 1
         }
         else {
+            // if block has not been broken yet, add part of the block's value to the total score
             totalScore += handledBlock.points / handledBlock.hitsLeft
         }
         if remainingBlocks == 0 {
+            // if no blocks left, end the game
             gameState = .gameOver
         }
     }
     
     func reset() {
+        // reset the model for the next game
         gameState = .playing
         totalScore = 0
         remainingBlocks = noBlocks * noRows

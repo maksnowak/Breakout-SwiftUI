@@ -2,7 +2,7 @@
 //  PlatformModel.swift
 //  Nowak_Arkanoid
 //
-//  Created by apios on 27/06/2024.
+//  Created by Maksymilian Nowak on 27/06/2024.
 //
 
 import Foundation

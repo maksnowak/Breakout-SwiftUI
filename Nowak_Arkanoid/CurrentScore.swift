@@ -2,7 +2,7 @@
 //  CurrentScore.swift
 //  Nowak_Arkanoid
 //
-//  Created by apios on 25/06/2024.
+//  Created by Maksymilian Nowak on 25/06/2024.
 //
 
 import SwiftUI
