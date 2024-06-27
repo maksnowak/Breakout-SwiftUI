@@ -8,20 +8,21 @@
 import SwiftUI
 
 struct CurrentScore: View {
-    @ObservedObject var model: BlockModel
-    @State var score = 0
-    
-    init(model: BlockModel) {
-        self.model = model
-    }
-    
+    @Binding var score: Int
     var body: some View {
         Text("\(score)").font(.system(size: 40).bold())
     }
 }
 
+struct CurrentScorePreview: View {
+    @State private var model = BlockModel(blocks: 6, rows: 7, blockWidth: 60.0, blockHeight: 15.0, blockSpacing: 5.0)
+    var body: some View {
+        CurrentScore(score: $model.totalScore)
+    }
+}
+
 struct CurrentScore_Previews: PreviewProvider {
     static var previews: some View {
-        CurrentScore(model: BlockModel(blocks: 6, rows: 7, blockWidth: 60.0, blockHeight: 15.0, blockSpacing: 5.0))
+        CurrentScorePreview()
     }
 }

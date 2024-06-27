@@ -9,18 +9,23 @@ import SwiftUI
 
 struct Block: View {
     var color: Color
-    @State var hidden: Bool
-    init(color: Color, hidden: Bool) {
-        self.color = color
-        self.hidden = false
-    }
+    @Binding var hidden: Bool
     var body: some View {
         Rectangle().fill(color).frame(width: 60, height: 15).opacity(hidden ? 0.0 : 100.0)
     }
 }
 
+
+struct BindingBlockPreview : View {
+    @State private var hidden = false
+    
+    var body: some View {
+        Block(color: .red, hidden: $hidden)
+    }
+}
+
 struct Block_Previews: PreviewProvider {
     static var previews: some View {
-        Block(color: .red, hidden: false)
+        BindingBlockPreview()
     }
 }

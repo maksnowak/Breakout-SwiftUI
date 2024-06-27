@@ -47,7 +47,7 @@ class BallPhysics: ObservableObject {
                 let y_in = -offset_y - 115.0 >= block.bounds.y_min && -offset_y - 115.0 <= block.bounds.y_max
                 if (x_in && y_in) {
                     print("Collision detected with block at row \(row_num), column \(block_num)")
-                    print("Block vertices: x - (\(block.bounds.x_min), \(block.bounds.x_min)); y - (\(block.bounds.y_min), \(block.bounds.y_max))")
+                    print("Block vertices: x - (\(block.bounds.x_min), \(block.bounds.x_max)); y - (\(block.bounds.y_min), \(block.bounds.y_max))")
                     model.handleCollision(row: row_num, block: block_num)
                     x_direction_positive = !x_direction_positive
                     y_direction_positive = !y_direction_positive

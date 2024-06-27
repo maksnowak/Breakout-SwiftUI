@@ -24,8 +24,8 @@ struct BlockBounds {
 class BlockInfo: ObservableObject {
     @Published var broken: Bool
     @Published var hitsLeft: Int
-    var points: Int
-    var bounds: BlockBounds
+    @Published var points: Int
+    @Published var bounds: BlockBounds
     init(broken: Bool, hitsLeft: Int, points: Int, bounds: BlockBounds) {
         self.broken = broken
         self.hitsLeft = hitsLeft
@@ -39,8 +39,8 @@ class BlockModel: ObservableObject {
     let blockWidth: CGFloat
     let blockHeight: CGFloat
     let blockSpacing: CGFloat
-    var noBlocks: Int
-    var noRows: Int
+    @Published var noBlocks: Int
+    @Published var noRows: Int
     @Published var totalScore = 0;
     @Published var grid: [[BlockInfo]] = []
     init (blocks: Int, rows: Int, blockWidth: CGFloat, blockHeight: CGFloat, blockSpacing: CGFloat) {
@@ -49,16 +49,16 @@ class BlockModel: ObservableObject {
         self.blockWidth = blockWidth
         self.blockHeight = blockHeight
         self.blockSpacing = blockSpacing
-        var totalHeight = CGFloat(self.noRows) * self.blockWidth + self.blockSpacing * CGFloat(self.noRows - 1)
+        let totalHeight = CGFloat(self.noRows) * self.blockWidth + self.blockSpacing * CGFloat(self.noRows - 1)
         print(totalHeight)
         for i in 0..<noRows {
             var row: [BlockInfo] = []
             for j in 0..<noBlocks {
                 let blockVertices = BlockBounds(vertices: [
-                    CGFloat(i) * (self.blockWidth + self.blockSpacing),
-                    CGFloat(i) * (self.blockWidth + self.blockSpacing) + self.blockWidth,
-                    totalHeight - (CGFloat(j) * (self.blockHeight + self.blockSpacing)),
-                    totalHeight - (CGFloat(j) * (self.blockHeight + self.blockSpacing)) + self.blockHeight
+                    CGFloat(j) * (self.blockWidth + self.blockSpacing),
+                    CGFloat(j) * (self.blockWidth + self.blockSpacing) + self.blockWidth,
+                    totalHeight - (CGFloat(i) * (self.blockHeight + self.blockSpacing)),
+                    totalHeight - (CGFloat(i) * (self.blockHeight + self.blockSpacing)) + self.blockHeight
                 ])
                 row.append(BlockInfo(broken: false, hitsLeft: 1, points: 10, bounds: blockVertices))
                 print(blockVertices)
@@ -72,6 +72,7 @@ class BlockModel: ObservableObject {
         print("before")
         print(handledBlock.hitsLeft)
         print(handledBlock.broken)
+        print(totalScore)
         handledBlock.hitsLeft -= 1
         if handledBlock.hitsLeft == 0 {
             handledBlock.broken = true
@@ -80,5 +81,6 @@ class BlockModel: ObservableObject {
         print("after")
         print(handledBlock.hitsLeft)
         print(handledBlock.broken)
+        print(totalScore)
     }
 }
