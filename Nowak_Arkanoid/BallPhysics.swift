@@ -35,15 +35,19 @@ class BallPhysics: ObservableObject {
             offset_y -= velocity
         }
         
+        print("Ball position: \(offset_x), \(offset_y)")
+        
         checkCollisions: for row_num in 0..<model.noRows {
             for block_num in 0..<model.noBlocks {
                 let block = model.grid[row_num][block_num]
                 if (block.broken) {
                     continue
                 }
-                let x_in = offset_x >= block.bounds.x_min && offset_x <= block.bounds.x_max
-                let y_in = -offset_y >= block.bounds.y_min + 430.0 && -offset_y <= block.bounds.y_max + 430.0
+                let x_in = offset_x + screenWidth/2 >= block.bounds.x_min && offset_x + screenWidth/2 <= block.bounds.x_max
+                let y_in = -offset_y - 115.0 >= block.bounds.y_min && -offset_y - 115.0 <= block.bounds.y_max
                 if (x_in && y_in) {
+                    print("Collision detected with block at row \(row_num), column \(block_num)")
+                    print("Block vertices: x - (\(block.bounds.x_min), \(block.bounds.x_min)); y - (\(block.bounds.y_min), \(block.bounds.y_max))")
                     model.handleCollision(row: row_num, block: block_num)
                     x_direction_positive = !x_direction_positive
                     y_direction_positive = !y_direction_positive

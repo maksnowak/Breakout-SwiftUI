@@ -49,17 +49,19 @@ class BlockModel: ObservableObject {
         self.blockWidth = blockWidth
         self.blockHeight = blockHeight
         self.blockSpacing = blockSpacing
-//        var totalHeight = self.noRows * self.blockWidth + self.blockSpacing * (self.noRows - 1)
+        var totalHeight = CGFloat(self.noRows) * self.blockWidth + self.blockSpacing * CGFloat(self.noRows - 1)
+        print(totalHeight)
         for i in 0..<noRows {
             var row: [BlockInfo] = []
             for j in 0..<noBlocks {
                 let blockVertices = BlockBounds(vertices: [
                     CGFloat(i) * (self.blockWidth + self.blockSpacing),
                     CGFloat(i) * (self.blockWidth + self.blockSpacing) + self.blockWidth,
-                    CGFloat(j) * (self.blockHeight + self.blockSpacing),
-                    CGFloat(j) * (self.blockHeight + self.blockSpacing)
+                    totalHeight - (CGFloat(j) * (self.blockHeight + self.blockSpacing)),
+                    totalHeight - (CGFloat(j) * (self.blockHeight + self.blockSpacing)) + self.blockHeight
                 ])
                 row.append(BlockInfo(broken: false, hitsLeft: 1, points: 10, bounds: blockVertices))
+                print(blockVertices)
             }
             self.grid.append(row)
         }
