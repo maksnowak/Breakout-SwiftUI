@@ -10,6 +10,7 @@ import SwiftUI
 
 class BallPhysics: ObservableObject {
     @ObservedObject var model: BlockModel
+    @ObservedObject var platformModel: PlatformModel
     @Published var offset_x = 0.0
     @Published var offset_y = 0.0
     var velocity = 5.0
@@ -19,8 +20,9 @@ class BallPhysics: ObservableObject {
     let screenWidth = UIScreen.main.bounds.width
     let screenHeight = UIScreen.main.bounds.height
     
-    init(model: BlockModel) {
+    init(model: BlockModel, platformModel: PlatformModel) {
         self.model = model
+        self.platformModel = platformModel
     }
     
     func update() {
@@ -55,6 +57,13 @@ class BallPhysics: ObservableObject {
                 }
             }
         }
+        
+        let x_in = offset_x >= platformModel.offset.width - platformModel.platformWidth/2 && offset_x <= platformModel.offset.width + platformModel.platformWidth/2
+        if (x_in && offset_y == CGFloat.zero) {
+            x_direction_positive = !x_direction_positive
+            y_direction_positive = !y_direction_positive
+        }
+        
         if (offset_x <= -screenWidth/2 || offset_x >= screenWidth/2) {
             x_direction_positive = !x_direction_positive
         }

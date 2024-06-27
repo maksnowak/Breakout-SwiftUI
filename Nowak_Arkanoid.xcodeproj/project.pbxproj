@@ -10,6 +10,7 @@
 		E7152F182C2C368F0047CE09 /* Ball.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7152F172C2C368F0047CE09 /* Ball.swift */; };
 		E7152F1A2C2C3A420047CE09 /* BallPhysics.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7152F192C2C3A420047CE09 /* BallPhysics.swift */; };
 		E7152F1C2C2C47A20047CE09 /* BlockModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7152F1B2C2C47A20047CE09 /* BlockModel.swift */; };
+		E72DAA0A2C2DA60E0057E6CC /* PlatformModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E72DAA092C2DA60E0057E6CC /* PlatformModel.swift */; };
 		E73D8ECD2C2B01FB007ECE29 /* Nowak_ArkanoidApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = E73D8ECC2C2B01FB007ECE29 /* Nowak_ArkanoidApp.swift */; };
 		E73D8ECF2C2B01FB007ECE29 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E73D8ECE2C2B01FB007ECE29 /* ContentView.swift */; };
 		E73D8ED12C2B01FE007ECE29 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E73D8ED02C2B01FE007ECE29 /* Assets.xcassets */; };
@@ -25,6 +26,7 @@
 		E7152F172C2C368F0047CE09 /* Ball.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Ball.swift; sourceTree = "<group>"; };
 		E7152F192C2C3A420047CE09 /* BallPhysics.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BallPhysics.swift; sourceTree = "<group>"; };
 		E7152F1B2C2C47A20047CE09 /* BlockModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BlockModel.swift; sourceTree = "<group>"; };
+		E72DAA092C2DA60E0057E6CC /* PlatformModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlatformModel.swift; sourceTree = "<group>"; };
 		E73D8EC92C2B01FB007ECE29 /* Nowak_Arkanoid.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Nowak_Arkanoid.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		E73D8ECC2C2B01FB007ECE29 /* Nowak_ArkanoidApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Nowak_ArkanoidApp.swift; sourceTree = "<group>"; };
 		E73D8ECE2C2B01FB007ECE29 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -79,6 +81,7 @@
 				E7152F172C2C368F0047CE09 /* Ball.swift */,
 				E7152F192C2C3A420047CE09 /* BallPhysics.swift */,
 				E7152F1B2C2C47A20047CE09 /* BlockModel.swift */,
+				E72DAA092C2DA60E0057E6CC /* PlatformModel.swift */,
 			);
 			path = Nowak_Arkanoid;
 			sourceTree = "<group>";
@@ -163,6 +166,7 @@
 			files = (
 				E7152F1A2C2C3A420047CE09 /* BallPhysics.swift in Sources */,
 				E73D8EDB2C2B03F0007ECE29 /* Platform.swift in Sources */,
+				E72DAA0A2C2DA60E0057E6CC /* PlatformModel.swift in Sources */,
 				E73D8ECF2C2B01FB007ECE29 /* ContentView.swift in Sources */,
 				E73D8EDF2C2B0A03007ECE29 /* Block.swift in Sources */,
 				E7152F1C2C2C47A20047CE09 /* BlockModel.swift in Sources */,
