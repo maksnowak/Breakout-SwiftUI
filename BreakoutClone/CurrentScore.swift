@@ -1,6 +1,6 @@
 //
 //  CurrentScore.swift
-//  Nowak_Arkanoid
+//  BreakoutClone
 //
 //  Created by Maksymilian Nowak on 25/06/2024.
 //

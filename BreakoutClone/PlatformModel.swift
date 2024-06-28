@@ -1,6 +1,6 @@
 //
 //  PlatformModel.swift
-//  Nowak_Arkanoid
+//  BreakoutClone
 //
 //  Created by Maksymilian Nowak on 27/06/2024.
 //
